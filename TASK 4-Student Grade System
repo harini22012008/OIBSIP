@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Student Grade System");
+        System.out.println("Enter student name:");
+        String name = sc.nextLine();
+        
+        System.out.println("Enter marks in 5 subjects:");
+        System.out.println("Subject 1:");
+        double s1 = sc.nextDouble();
+        System.out.println("Subject 2:");
+        double s2 = sc.nextDouble();
+        System.out.println("Subject 3:");
+        double s3 = sc.nextDouble();
+        System.out.println("Subject 4:");
+        double s4 = sc.nextDouble();
+        System.out.println("Subject 5:");
+        double s5 = sc.nextDouble();
+        
+        double total = s1 + s2 + s3 + s4 + s5;
+        double average = total / 5;
+        
+        System.out.println("\n--- Result ---");
+        System.out.println("Name: " + name);
+        System.out.println("Total: " + total);
+        System.out.println("Average: " + average);
+        
+        if (average >= 90) {
+            System.out.println("Grade: A+");
+        } else if (average >= 80) {
+            System.out.println("Grade: A");
+        } else if (average >= 70) {
+            System.out.println("Grade: B");
+        } else if (average >= 60) {
+            System.out.println("Grade: C");
+        } else {
+            System.out.println("Grade: F - Fail");
+        }
+    }
+}
+Output:
+Student Grade System
+Enter student name:
+Harini
+Enter marks in 5 subjects:
+Subject 1:
+85
+Subject 2:
+90
+Subject 3:
+78
+Subject 4:
+92
+Subject 5:
+88
+
+--- Result ---
+Name: Harini
+Total: 433.0
+Average: 86.6
+Grade: A
