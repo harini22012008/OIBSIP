@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class MyClass {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int number = rand.nextInt(100) + 1;
+        Scanner sc = new Scanner(System.in);
+        int guess = 0;
+        int attempts = 0;
+        
+        System.out.println("Guess number 1-100!");
+        
+        while (guess != number) {
+            System.out.println("Enter guess:");
+            guess = sc.nextInt();
+            attempts++;
+            
+            if (guess < number) {
+                System.out.println("Too Low!");
+            } else if (guess > number) {
+                System.out.println("Too High!");
+            } else {
+                System.out.println("CORRECT! Attempts: " + attempts);
+            }
+        }
+    }
+}
+Output:
+Guess number 1-100!
+Enter guess:
+50
+Too Low!
+Enter guess:
+60
+Too Low!
+Enter guess:
+70
+Too Low!
+Enter guess:
+80
+Too Low!
+Enter guess:
+90
+Too High!
+Enter guess:
+85
+Too High!
+Enter guess:
+84
+CORRECT! Attempts: 7
