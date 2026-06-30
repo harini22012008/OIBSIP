@@ -1,0 +1,97 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class MyClass {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> books = new ArrayList<>();
+        int choice;
+        
+        System.out.println("Digital Library System");
+        
+        do {
+            System.out.println("\n1. Add Book");
+            System.out.println("2. View All Books");
+            System.out.println("3. Search Book");
+            System.out.println("4. Exit");
+            System.out.println("Enter choice:");
+            choice = sc.nextInt();
+            sc.nextLine();
+            
+            if (choice == 1) {
+                System.out.println("Enter book name:");
+                String book = sc.nextLine();
+                books.add(book);
+                System.out.println("Book added!");
+            } else if (choice == 2) {
+                if (books.isEmpty()) {
+                    System.out.println("No books yet!");
+                } else {
+                    System.out.println("All Books:");
+                    for (int i = 0; i < books.size(); i++) {
+                        System.out.println((i+1) + ". " + books.get(i));
+                    }
+                }
+            } else if (choice == 3) {
+                System.out.println("Enter book to search:");
+                String search = sc.nextLine();
+                if (books.contains(search)) {
+                    System.out.println("Book Found!");
+                } else {
+                    System.out.println("Book Not Found!");
+                }
+            } else if (choice == 4) {
+                System.out.println("Goodbye!");
+            }
+        } while (choice != 4);
+    }
+}
+Output:
+Digital Library System
+
+1. Add Book
+2. View All Books
+3. Search Book
+4. Exit
+Enter choice:
+1
+Enter book name:
+Java Programming 
+Book added!
+
+1. Add Book
+2. View All Books
+3. Search Book
+4. Exit
+Enter choice:
+1
+Enter book name:
+Python basics 
+Book added!
+
+1. Add Book
+2. View All Books
+3. Search Book
+4. Exit
+Enter choice:
+2
+All Books:
+1. Java Programming 
+2. Python basics 
+
+1. Add Book
+2. View All Books
+3. Search Book
+4. Exit
+Enter choice:
+3
+Enter book to search:
+Java Programming 
+Book Found!
+
+1. Add Book
+2. View All Books
+3. Search Book
+4. Exit
+Enter choice:
+4
